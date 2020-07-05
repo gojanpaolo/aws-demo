@@ -1,0 +1,12 @@
+on:
+  push:
+    branches: master
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2     
+    - uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.300
+    - run: dotnet publish src -o dist -c Release
