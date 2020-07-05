@@ -7,7 +7,7 @@
         "parameters": {
           "appBundle": "publish.zip",
           "iisPath": "/",
-          "iisWebSite": "aws-demo"
+          "iisWebSite": "Default Web Site"
         }
       }
     ]
