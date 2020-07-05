@@ -1,15 +1,14 @@
 {
-    "manifestVersion": 1,
-    "deployments": {
-        "aspNetCoreWeb": [
-        {
-            "name": "test-dotnet-core",
-            "parameters": {
-                "appBundle": "publish.zip",
-                "iisPath": "/",
-                "iisWebSite": "Default Web Site"
-            }
+  "manifestVersion": 1,
+  "deployments": {
+    "aspNetCoreWeb": [
+      {
+        "parameters": {
+          "appBundle": "publish.zip",
+          "iisPath": "/",
+          "iisWebSite": "Default Web Site"
         }
-        ]
-    }
+      }
+    ]
+  }
 }
