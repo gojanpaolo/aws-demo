@@ -18,5 +18,5 @@ jobs:
         aws_secret_key: ${{ secrets.aws_secret_access_key }}
         application_name: aws-demo
         environment_name: aws-demo-env
-        region: us-east-2
+        version_label: ${{ github.run_number }}
         deployment_package: deploy.zip
