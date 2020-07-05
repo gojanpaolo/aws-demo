@@ -18,6 +18,6 @@ jobs:
         aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         application_name: tutorials
         environment_name: Tutorials-env-1
-        version_label: $ {{ github.RUN_NUMBER }}
+        version_label: ${{ github.RUN_NUMBER }}
         region: us-east-2
         deployment_package: ${{ format('{0}/bundle.zip', github.workspace) }}
