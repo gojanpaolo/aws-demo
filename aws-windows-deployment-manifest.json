@@ -4,9 +4,9 @@
     "aspNetCoreWeb": [
       {
         "parameters": {
+          "name": "aws-demo",
           "appBundle": "publish.zip",
-          "iisPath": "/",
-          "iisWebSite": "Default Web Site"
+          "iisPath": "/"
         }
       }
     ]
