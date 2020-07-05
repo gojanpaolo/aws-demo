@@ -9,8 +9,8 @@ jobs:
     - uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.300
-    - run: dotnet publish src -o deploy -r linux-x64
-    - run: zip -j -r deploy.zip deploy
+    - run: dotnet publish src -o publish
+    - run: zip -j -r publish.zip publish
     - uses: einaregilsson/beanstalk-deploy@v10
       with:
         aws_access_key: ${{ secrets.aws_access_key_id }}
@@ -19,4 +19,4 @@ jobs:
         environment_name: aws-demo-linux-env
         version_label: ${{ github.run_number }}
         region: us-east-2
-        deployment_package: deploy.zip
+        deployment_package: publish.zip
