@@ -3,8 +3,8 @@
   "deployments": {
     "aspNetCoreWeb": [
       {
+        "name": "aws-demo",
         "parameters": {
-          "name": "aws-demo",
           "appBundle": "publish.zip",
           "iisPath": "/",
           "iisWebSite": "aws-demo"
