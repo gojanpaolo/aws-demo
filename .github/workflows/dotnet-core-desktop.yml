@@ -10,5 +10,5 @@ jobs:
       with:
         dotnet-version: 3.1.300
     - run: dotnet publish src -o dist -c Release
-    - run: zip -r ${{ format('{0}/dist/publish.zip', github.workspace) }} ${{ format('{0}/dist', github.workspace) }}
-    - run: zip ${{ format('{0}/dist/bundle.zip', github.workspace) }} ${{ format('{0}/publish.zip', github.workspace) }} ${{ format('{0}/aws-windows-deployment-manifest.json', github.workspace) }} 
+    - run: zip -r ${{ format('{0}/publish.zip', github.workspace) }} ${{ format('{0}/dist', github.workspace) }}
+    - run: zip ${{ format('{0}/bundle.zip', github.workspace) }} ${{ format('{0}/publish.zip', github.workspace) }} ${{ format('{0}/aws-windows-deployment-manifest.json', github.workspace) }} 
