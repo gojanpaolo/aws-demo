@@ -6,7 +6,8 @@
         "parameters": {
           "name": "aws-demo",
           "appBundle": "publish.zip",
-          "iisPath": "/"
+          "iisPath": "/",
+          "iisWebSite": "aws-demo"
         }
       }
     ]
