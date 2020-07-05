@@ -11,7 +11,7 @@ jobs:
         dotnet-version: 3.1.300
     - run: dotnet publish src -o dist -c Release
     - run: zip -j -r publish.zip ${{ format('{0}/dist', github.workspace) }}
-    - run: zip -j ${{ format('{0}/bundle.zip', github.workspace) }} publish.zip ${{ format('{0}/aws-windows-deployment-manifest.json', github.workspace) }} 
+    - run: zip -j deploy.zip publish.zip aws-windows-deployment-manifest.json
     - uses: einaregilsson/beanstalk-deploy@v10
       with:
         aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -20,4 +20,4 @@ jobs:
         environment_name: Tutorials-env-1
         version_label: ${{ github.RUN_NUMBER }}
         region: us-east-2
-        deployment_package: ${{ format('{0}/bundle.zip', github.workspace) }}
+        deployment_package: deploy.zip
