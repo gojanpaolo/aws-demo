@@ -10,4 +10,4 @@ jobs:
       with:
         dotnet-version: 3.1.300
     - run: dotnet publish src -o dist -c Release
-    - run: zip -r publish.zip ${{ format('{0}\dist', github.workspace) }}
+    - run: zip -r ${{ format('{0}/dist/publish.zip', github.workspace) }} ${{ format('{0}/dist', github.workspace) }}
