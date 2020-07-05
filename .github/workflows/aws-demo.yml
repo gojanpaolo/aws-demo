@@ -9,9 +9,8 @@ jobs:
     - uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.300
-    - run: dotnet publish src -o publish -r linux-x64
-    - run: zip -j -r publish.zip publish
-    - run: zip -j deploy.zip publish.zip aws-windows-deployment-manifest.json
+    - run: dotnet publish src -o deploy -r linux-x64
+    - run: zip -j -r deploy.zip deploy
     - uses: einaregilsson/beanstalk-deploy@v10
       with:
         aws_access_key: ${{ secrets.aws_access_key_id }}
