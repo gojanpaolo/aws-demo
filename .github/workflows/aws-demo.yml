@@ -9,7 +9,7 @@ jobs:
     - uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.300
-    - run: dotnet publish -o publish
+    - run: dotnet publish src -o publish
     - run: zip -j -r publish.zip publish
     - run: zip -j deploy.zip publish.zip aws-windows-deployment-manifest.json
     - uses: einaregilsson/beanstalk-deploy@v10
