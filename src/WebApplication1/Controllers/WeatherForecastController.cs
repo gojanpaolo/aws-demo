@@ -24,6 +24,6 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet]
-        public string Get() => "3";
+        public string Get() => "4";
     }
 }
