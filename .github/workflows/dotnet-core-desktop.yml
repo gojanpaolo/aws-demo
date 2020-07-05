@@ -14,10 +14,10 @@ jobs:
     - run: zip -j deploy.zip publish.zip aws-windows-deployment-manifest.json
     - uses: einaregilsson/beanstalk-deploy@v10
       with:
-        aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws_access_key: ${{ secrets.aws_access_key_id }}
+        aws_secret_key: ${{ secrets.aws_secret_access_key }}
         application_name: tutorials
         environment_name: Tutorials-env-1
-        version_label: ${{ GITHUB_RUN_NUMBER }}
+        version_label: ${{ github.run_number }}
         region: us-east-2
         deployment_package: deploy.zip
