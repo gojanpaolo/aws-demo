@@ -10,8 +10,8 @@ jobs:
       with:
         dotnet-version: 3.1.300
     - run: dotnet publish src -o dist -c Release
-    - run: zip -j -r ${{ format('{0}/publish.zip', github.workspace) }} ${{ format('{0}/dist', github.workspace) }}
-    - run: zip -j ${{ format('{0}/bundle.zip', github.workspace) }} ${{ format('{0}/publish.zip', github.workspace) }} ${{ format('{0}/aws-windows-deployment-manifest.json', github.workspace) }} 
+    - run: zip -j -r publish.zip ${{ format('{0}/dist', github.workspace) }}
+    - run: zip -j ${{ format('{0}/bundle.zip', github.workspace) }} publish.zip ${{ format('{0}/aws-windows-deployment-manifest.json', github.workspace) }} 
     - uses: einaregilsson/beanstalk-deploy@v10
       with:
         aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
