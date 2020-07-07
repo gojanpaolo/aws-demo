@@ -12,7 +12,7 @@ public class Program
             .Configure(_ => _
                 .Run(_ => _
                     .Response
-                    .WriteAsync("2"))))
+                    .WriteAsync("Hello Patrick"))))
         .Build()
         .Run();
 }
